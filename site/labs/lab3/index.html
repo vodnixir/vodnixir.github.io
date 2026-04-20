@@ -59,11 +59,13 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#_1">Цель работы</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">Задание</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">Исходные данные</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">Код</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">Что было сделано</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1">1. Подготовка репозитория</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_4">Выводы</a>
+        </ul>
     </li>
     </ul>
                   </li>
@@ -92,15 +94,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="3">Лабораторная работа 3</h1>
+                <h1 id="3-cicd-sourcecraft-github-actions">Лабораторная работа 3. CI/CD для статического сайта в SourceCraft и GitHub Actions</h1>
 <h2 id="_1">Цель работы</h2>
-<p>Продолжить формирование портфолио лабораторных работ.</p>
-<h2 id="_2">Задание</h2>
-<p>Создать отдельную страницу и оформить её по шаблону.</p>
-<h2 id="_3">Код</h2>
-<p>Здесь будет размещён код лабораторной работы.</p>
-<h2 id="_4">Выводы</h2>
-<p>Структура сайта остаётся единообразной и удобной для навигации.</p>
+<p>Целью лабораторной работы было изучение основ CI/CD на примере автоматического развертывания статического сайта, созданного с помощью MkDocs.</p>
+<p>В рамках работы требовалось:</p>
+<ul>
+<li>настроить автоматическое развертывание сайта на платформе SourceCraft;</li>
+<li>настроить автоматическое развертывание этого же сайта через GitHub Actions;</li>
+<li>использовать один локальный репозиторий и два удалённых репозитория;</li>
+<li>изучить, какие настройки необходимо выполнить в интерфейсах GitHub и SourceCraft для корректной публикации сайта.</li>
+</ul>
+<h2 id="_2">Исходные данные</h2>
+<p>В качестве основы использовался ранее созданный статический сайт-портфолио лабораторных работ на MkDocs.</p>
+<p>Локально проект содержал:</p>
+<ul>
+<li>исходные Markdown-страницы сайта;</li>
+<li>конфигурацию <code>mkdocs.yml</code>;</li>
+<li>ранее собранную версию сайта;</li>
+<li>Git-репозиторий, связанный с GitHub.</li>
+</ul>
+<h2 id="_3">Что было сделано</h2>
+<h3 id="1">1. Подготовка репозитория</h3>
+<p>В работе использовался один локальный Git-репозиторий и два удалённых репозитория:</p>
+<ul>
+<li><code>origin</code> — GitHub-репозиторий;</li>
+<li><code>sourcecraft</code> — репозиторий на платформе SourceCraft.</li>
+</ul>
+<p>Для подключения второго удалённого репозитория была использована команда:</p>
+<p>```bash
+git remote add sourcecraft https://git.sourcecraft.dev/&lt;имя_аккаунта&gt;/&lt;имя_репозитория&gt;.git</p>
               
             </div>
           </div><footer>
