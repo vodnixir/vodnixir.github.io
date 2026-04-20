@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Олег Брискиндов" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Лабораторная работа 2 - Портфолио лабораторных работ</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u041b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u043d\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430 2";
+        var mkdocs_page_input_path = "labs/lab2.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Портфолио лабораторных работ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Главная</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">Об авторе</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Лабораторные работы</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Общая страница</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lab1/">Лабораторная работа 1</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Лабораторная работа 2</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">Описание задачи</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">Как была решена задача</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1">1. Создание и преобразование массивов</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2">2. Векторные операции</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3">3. Матричные вычисления</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4">4. Работа с данными</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5">5. Нормализация данных</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#6">6. Визуализация</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">Нюансы решения</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">Векторизация вместо циклов</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">Разница между поэлементным и матричным умножением</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reshape">Использование reshape</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#numpylinalg">Использование numpy.linalg</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">Особенность нормализации</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">Визуализация и сохранение графиков</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_8">Тестирование</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lab3/">Лабораторная работа 3</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Портфолио лабораторных работ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Лабораторные работы</li>
+      <li class="breadcrumb-item active">Лабораторная работа 2</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="2-numpy">Лабораторная работа 2. Основы NumPy: массивы и векторные операции</h1>
+<h2 id="_1">Описание задачи</h2>
+<p>Цель лабораторной работы — изучить основы библиотеки NumPy, научиться работать с одномерными и многомерными массивами, выполнять векторные и матричные операции, а также применять базовые методы анализа и визуализации данных.</p>
+<p>В ходе работы требовалось реализовать набор функций для:</p>
+<ul>
+<li>создания массивов и матриц;</li>
+<li>изменения формы массивов;</li>
+<li>транспонирования матриц;</li>
+<li>выполнения векторных операций;</li>
+<li>выполнения матричных вычислений;</li>
+<li>загрузки данных из CSV-файла;</li>
+<li>статистического анализа данных;</li>
+<li>нормализации значений;</li>
+<li>построения графиков.</li>
+</ul>
+<p>Дополнительно код должен был:</p>
+<ul>
+<li>проходить тесты;</li>
+<li>содержать аннотации типов;</li>
+<li>содержать docstring;</li>
+<li>соответствовать требованиям PEP-8.</li>
+</ul>
+<h2 id="_2">Как была решена задача</h2>
+<p>Для выполнения лабораторной работы были использованы следующие библиотеки:</p>
+<ul>
+<li><code>NumPy</code> — для работы с массивами, векторами и матрицами;</li>
+<li><code>pandas</code> — для загрузки CSV-файла;</li>
+<li><code>matplotlib</code> и <code>seaborn</code> — для визуализации данных;</li>
+<li><code>pytest</code> — для тестирования.</li>
+</ul>
+<h3 id="1">1. Создание и преобразование массивов</h3>
+<p>Сначала были реализованы функции для базовой работы с массивами:</p>
+<ul>
+<li>создание одномерного массива чисел от 0 до 9;</li>
+<li>создание матрицы размером 5x5 со случайными значениями;</li>
+<li>преобразование вектора формы <code>(10,)</code> в матрицу формы <code>(2, 5)</code>;</li>
+<li>транспонирование матрицы.</li>
+</ul>
+<p>Эти операции позволяют понять базовую модель работы NumPy: данные хранятся в массивах, а большинство преобразований выполняются встроенными методами без циклов.</p>
+<h3 id="2">2. Векторные операции</h3>
+<p>Далее были реализованы функции для выполнения основных операций над векторами:</p>
+<ul>
+<li>поэлементное сложение;</li>
+<li>умножение вектора на скаляр;</li>
+<li>поэлементное умножение;</li>
+<li>скалярное произведение.</li>
+</ul>
+<p>При решении использовалась векторизация NumPy, то есть операции выполнялись сразу над всем массивом. Это делает код короче, понятнее и эффективнее по сравнению с ручной обработкой элементов через <code>for</code>.</p>
+<h3 id="3">3. Матричные вычисления</h3>
+<p>После этого были реализованы функции для работы с матрицами:</p>
+<ul>
+<li>матричное умножение;</li>
+<li>вычисление определителя;</li>
+<li>вычисление обратной матрицы;</li>
+<li>решение системы линейных уравнений.</li>
+</ul>
+<p>Для этих задач использовались функции из модуля <code>numpy.linalg</code>, так как он содержит готовые и оптимизированные алгоритмы линейной алгебры.</p>
+<h3 id="4">4. Работа с данными</h3>
+<p>Отдельная часть лабораторной работы была посвящена загрузке и обработке данных из CSV-файла. Данные считывались с помощью <code>pandas</code>, после чего преобразовывались в <code>NumPy</code>-массив.</p>
+<p>После загрузки был реализован статистический анализ данных. Для массива вычислялись:</p>
+<ul>
+<li>среднее значение;</li>
+<li>медиана;</li>
+<li>стандартное отклонение;</li>
+<li>минимальное и максимальное значение;</li>
+<li>25-й и 75-й перцентили.</li>
+</ul>
+<h3 id="5">5. Нормализация данных</h3>
+<p>Также была реализована min-max нормализация данных по формуле:</p>
+<p><code>(x - min) / (max - min)</code></p>
+<p>Такой способ позволяет привести значения к диапазону от 0 до 1. Это полезно при анализе данных и часто используется в задачах машинного обучения.</p>
+<h3 id="6">6. Визуализация</h3>
+<p>В последней части работы были реализованы функции построения графиков:</p>
+<ul>
+<li>гистограмма;</li>
+<li>тепловая карта;</li>
+<li>линейный график.</li>
+</ul>
+<p>Графики сохраняются в отдельную папку <code>plots</code>, что позволяет использовать их в дальнейшем для анализа или включения в отчёт.</p>
+<h2 id="_3">Нюансы решения</h2>
+<h3 id="_4">Векторизация вместо циклов</h3>
+<p>Одна из главных особенностей NumPy заключается в том, что многие операции можно выполнять без циклов. Например, сложение двух массивов делается напрямую через <code>a + b</code>, а не через перебор элементов.</p>
+<p>Это делает программу не только короче, но и быстрее.</p>
+<h3 id="_5">Разница между поэлементным и матричным умножением</h3>
+<p>При выполнении работы важно было различать два разных типа умножения:</p>
+<ul>
+<li><code>a * b</code> — поэлементное умножение;</li>
+<li><code>a @ b</code> — матричное умножение.</li>
+</ul>
+<p>Это разные операции, и они применяются в разных задачах.</p>
+<h3 id="reshape">Использование reshape</h3>
+<p>Функция <code>reshape</code> не изменяет значения массива, а только задаёт новое представление данных в другой форме. Это удобно, когда нужно перейти от вектора к матрице или наоборот.</p>
+<h3 id="numpylinalg">Использование numpy.linalg</h3>
+<p>Для вычисления определителя, обратной матрицы и решения системы линейных уравнений удобнее использовать готовые функции <code>numpy.linalg</code>, чем реализовывать эти алгоритмы вручную.</p>
+<h3 id="_6">Особенность нормализации</h3>
+<p>При min-max нормализации важно помнить, что если все значения массива одинаковые, то выражение <code>(max - min)</code> станет равно нулю. В таком случае может возникнуть деление на ноль. Для обычных входных данных функция работает корректно, но этот случай стоит учитывать отдельно.</p>
+<h3 id="_7">Визуализация и сохранение графиков</h3>
+<p>При построении графиков важно не только создать рисунок, но и корректно сохранить его в файл. После сохранения нужно закрывать фигуру с помощью <code>plt.close()</code>, чтобы не накапливать объекты графики в памяти.</p>
+<h2 id="_8">Тестирование</h2>
+<p>Для проверки корректности работы функций был создан отдельный файл <code>test_main.py</code> с тестами для основных операций.</p>
+<p>Тесты запускались с помощью команды:</p>
+<p>```bash
+pytest test_main.py -v</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../lab1/" class="btn btn-neutral float-left" title="Лабораторная работа 1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../lab3/" class="btn btn-neutral float-right" title="Лабораторная работа 3">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../lab1/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../lab3/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
