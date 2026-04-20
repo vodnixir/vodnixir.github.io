@@ -1,0 +1,17 @@
+on:
+  push:
+    - workflows: [build-site]
+      filter:
+        branches: ["main"]
+
+workflows:
+  build-site:
+    tasks:
+      - name: build-mkdocs
+        cubes:
+          - name: build
+            image: docker.io/library/python:3.13-slim
+            script:
+              - pip install mkdocs mkdocs-material
+              - cd source
+              - mkdocs build -d ../site
