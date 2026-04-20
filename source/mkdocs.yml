@@ -4,6 +4,7 @@ site_author: Олег Брискиндов
 
 theme:
   name: readthedocs
+
   language: ru
 
 nav:
