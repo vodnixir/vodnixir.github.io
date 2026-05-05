@@ -3,15 +3,30 @@ site_description: Сайт-портфолио по лабораторным ра
 site_author: Олег Брискиндов
 
 theme:
-  name: readthedocs
-
+  name: material
   language: ru
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+
+plugins:
+  - search:
+      lang: ru
 
 nav:
   - Главная: index.md
   - Об авторе: about.md
   - Лабораторные работы:
-      - Общая страница: labs/index.md
+      - Все работы: labs/index.md
       - Лабораторная работа 1: labs/lab1.md
       - Лабораторная работа 2: labs/lab2.md
       - Лабораторная работа 3: labs/lab3.md
