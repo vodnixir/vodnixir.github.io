@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Олег Брискиндов" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Лабораторная работа 4 - Портфолио лабораторных работ</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u041b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u043d\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430 4";
+        var mkdocs_page_input_path = "labs/lab4.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Портфолио лабораторных работ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Главная</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">Об авторе</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Лабораторные работы</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Общая страница</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lab1/">Лабораторная работа 1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lab2/">Лабораторная работа 2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lab3/">Лабораторная работа 3</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Лабораторная работа 4</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">Описание задачи</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">Исходные данные</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">Как была решена задача</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1">1. Загрузка и анализ данных</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2">2. Заполнение пропусков</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3">3. Обучение базовых моделей</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4_1">4. Валидация и метрики качества</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#accuracy">Accuracy</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#confusion-matrix">Confusion matrix</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">Вероятности и порог классификации</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#roc-auc">ROC-AUC</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">Самостоятельная часть</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-random-forest">1. Улучшенный Random Forest</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2_1">2. Сравнение с другими моделями</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">Нюансы решения</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">Дисбаланс классов</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">Пропуски как сигнал</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-">Порог классификации и бизнес-логика</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#svm">SVM медленнее на больших выборках</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pipeline">Pipeline для предобработки</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_9">Выводы</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lab5/">Лабораторная работа 5</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Портфолио лабораторных работ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Лабораторные работы</li>
+      <li class="breadcrumb-item active">Лабораторная работа 4</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="4">Лабораторная работа 4. Машинное обучение: предсказание дефолта по кредиту</h1>
+<h2 id="_1">Описание задачи</h2>
+<p>Цель лабораторной работы — изучить построение моделей бинарной классификации и освоить метрики оценки их качества. В качестве задачи выбрано предсказание дефолта по кредиту: по анкетным данным заёмщика определить, допустит ли он просрочку более 90 дней.</p>
+<p>Данные взяты из соревнования Kaggle <a href="https://www.kaggle.com/c/GiveMeSomeCredit">Give Me Some Credit</a>.</p>
+<p>В ходе работы требовалось:</p>
+<ul>
+<li>загрузить и исследовать набор данных из CSV-файла;</li>
+<li>заполнить пропуски в данных;</li>
+<li>обучить модели логистической регрессии и случайного леса;</li>
+<li>провалидировать модели на тестовой выборке;</li>
+<li>сравнить метрики качества: accuracy, confusion matrix, ROC-AUC;</li>
+<li>в самостоятельной части — улучшить Random Forest и сравнить с SVM, kNN и градиентным бустингом.</li>
+</ul>
+<h2 id="_2">Исходные данные</h2>
+<p>Набор данных содержал 50 000 обучающих и 37 500 тестовых записей. Каждый объект описывается 10 входными признаками и целевой переменной — наличием просрочки более 90 дней (<code>SeriousDlqin2yrs</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Признак</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RevolvingUtilizationOfUnsecuredLines</td>
+<td>Доля использованных лимитов по кредитным картам</td>
+</tr>
+<tr>
+<td>age</td>
+<td>Возраст заёмщика</td>
+</tr>
+<tr>
+<td>DebtRatio</td>
+<td>Отношение долговой нагрузки к доходу</td>
+</tr>
+<tr>
+<td>MonthlyIncome</td>
+<td>Доход в месяц</td>
+</tr>
+<tr>
+<td>NumberOfOpenCreditLinesAndLoans</td>
+<td>Количество открытых кредитов и кредитных линий</td>
+</tr>
+<tr>
+<td>NumberRealEstateLoansOrLines</td>
+<td>Количество ипотек и кредитов на недвижимость</td>
+</tr>
+<tr>
+<td>NumberOfTime30-59DaysPastDueNotWorse</td>
+<td>Просрочки 30–59 дней за последние 2 года</td>
+</tr>
+<tr>
+<td>NumberOfTime60-89DaysPastDueNotWorse</td>
+<td>Просрочки 60–89 дней за последние 2 года</td>
+</tr>
+<tr>
+<td>NumberOfTimes90DaysLate</td>
+<td>Просрочки более 90 дней за последние 2 года</td>
+</tr>
+<tr>
+<td>NumberOfDependents</td>
+<td>Количество иждивенцев в семье</td>
+</tr>
+</tbody>
+</table>
+<p>Дисбаланс классов значительный: только 6,7% клиентов имеют дефолт (3 343 из 50 000).</p>
+<h2 id="_3">Как была решена задача</h2>
+<p>Использованные библиотеки: <code>pandas</code>, <code>numpy</code>, <code>matplotlib</code>, <code>seaborn</code>, <code>scikit-learn</code>.</p>
+<h3 id="1">1. Загрузка и анализ данных</h3>
+<p>Данные считывались функцией <code>pd.read_csv()</code>. Метод <code>.info()</code> показал наличие пропусков в двух столбцах:</p>
+<ul>
+<li><code>MonthlyIncome</code> — заполнен в 40 147 строках из 50 000 (~80%);</li>
+<li><code>NumberOfDependents</code> — заполнен в 48 667 строках из 50 000 (~97%).</li>
+</ul>
+<p>Метод <code>.describe()</code> позволил выявить аномальные значения: максимальное значение дохода составляло 3 008 750, а ряд признаков просрочки имели значения 98, что, вероятно, означает особый код вместо реального числа дней.</p>
+<h3 id="2">2. Заполнение пропусков</h3>
+<p>Пропуски заполнялись средними значениями, рассчитанными по <strong>обучающей</strong> выборке:</p>
+<pre><code class="language-python">train_mean = training_data.mean()
+training_data.fillna(train_mean, inplace=True)
+test_data.fillna(train_mean, inplace=True)
+</code></pre>
+<p>Средние обучающей выборки использовались для заполнения пропусков и в тестовых данных — это имитирует реальные условия, когда при работе модели исторические данные недоступны.</p>
+<h3 id="3">3. Обучение базовых моделей</h3>
+<p>Обучались две модели:</p>
+<ul>
+<li><strong>Логистическая регрессия</strong> (<code>LogisticRegression</code>, <code>max_iter=1000</code>) — обобщённая линейная модель, адаптированная для задачи классификации;</li>
+<li><strong>Случайный лес</strong> (<code>RandomForestClassifier</code>, <code>n_estimators=100</code>, <code>random_state=42</code>) — ансамбль деревьев решений.</li>
+</ul>
+<h3 id="4_1">4. Валидация и метрики качества</h3>
+<h4 id="accuracy">Accuracy</h4>
+<p>Accuracy (доля правильных предсказаний) сравнивалась с константным классификатором, который всегда предсказывает 0 (нет дефолта). Поскольку 93,3% клиентов не имеют дефолта, константный классификатор уже имеет accuracy ~93%.</p>
+<p>Accuracy логистической регрессии оказалась близка к константному классификатору — это типичная проблема несбалансированных датасетов: модель научилась предсказывать только большой класс.</p>
+<h4 id="confusion-matrix">Confusion matrix</h4>
+<p>Матрица ошибок (confusion matrix) позволила увидеть реальное распределение предсказаний по четырём категориям:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Предсказано 0</th>
+<th>Предсказано 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Фактически 0</strong></td>
+<td>TN (истинно отрицательные)</td>
+<td>FP (ложная тревога)</td>
+</tr>
+<tr>
+<td><strong>Фактически 1</strong></td>
+<td>FN (пропуск цели)</td>
+<td>TP (истинно положительные)</td>
+</tr>
+</tbody>
+</table>
+<p>Для задачи кредитного скоринга особенно опасны <strong>FN</strong> (пропущенные дефолты): банк выдаёт кредит клиенту, который его не вернёт.</p>
+<h4 id="_4">Вероятности и порог классификации</h4>
+<p>Метод <code>predict_proba()</code> возвращает вероятности принадлежности к классу. По умолчанию порог классификации равен 0.5, но его можно менять:</p>
+<ul>
+<li><strong>Высокий порог (0.7)</strong>: меньше ложных тревог, но больше пропущенных дефолтов;</li>
+<li><strong>Низкий порог (0.3)</strong>: меньше пропущенных дефолтов, но больше ложных тревог — банк чаще отказывает честным клиентам.</li>
+</ul>
+<p>Выбор порога зависит от бизнес-задачи: что обходится дороже — невозврат кредита или потеря честного клиента.</p>
+<h4 id="roc-auc">ROC-AUC</h4>
+<p>ROC-кривая показывает зависимость TPR (доля верно найденных дефолтов) от FPR (доля ложных тревог) при изменении порога. AUC — площадь под этой кривой:</p>
+<ul>
+<li>0.90–1.00 — отлично;</li>
+<li>0.80–0.90 — хорошо;</li>
+<li>0.70–0.80 — удовлетворительно;</li>
+<li>0.50–0.60 — случайное угадывание.</li>
+</ul>
+<h2 id="_5">Самостоятельная часть</h2>
+<h3 id="1-random-forest">1. Улучшенный Random Forest</h3>
+<p>Базовый Random Forest плохо справляется с несбалансированными классами. Параметр <code>class_weight="balanced"</code> заставляет модель уделять больше внимания редкому классу (дефолт):</p>
+<pre><code class="language-python">better_random_forest = ensemble.RandomForestClassifier(
+    n_estimators=300,
+    max_depth=12,
+    min_samples_leaf=5,
+    class_weight=&quot;balanced&quot;,
+    random_state=42,
+    n_jobs=-1
+)
+</code></pre>
+<p>ROC-AUC улучшенного леса оказался заметно выше, чем у базового.</p>
+<h3 id="2_1">2. Сравнение с другими моделями</h3>
+<p>Были протестированы три дополнительные модели:</p>
+<p><strong>SVM</strong> (метод опорных векторов) с RBF-ядром и <code>class_weight="balanced"</code>. Требует стандартизации признаков, поэтому завёрнут в <code>Pipeline</code> вместе с <code>StandardScaler</code>:</p>
+<pre><code class="language-python">svm_model = Pipeline([
+    (&quot;scaler&quot;, StandardScaler()),
+    (&quot;svc&quot;, SVC(C=1.0, kernel=&quot;rbf&quot;, probability=True,
+                class_weight=&quot;balanced&quot;, random_state=42))
+])
+</code></pre>
+<p><strong>kNN</strong> (метод k ближайших соседей) с <code>n_neighbors=15</code>. Также требует стандартизации, чувствителен к масштабу признаков.</p>
+<p><strong>HistGradientBoostingClassifier</strong> — быстрый градиентный бустинг из sklearn, работает непосредственно с пропусками и показывает хорошее качество без сложной предобработки:</p>
+<pre><code class="language-python">hgb_model = HistGradientBoostingClassifier(
+    max_depth=8,
+    learning_rate=0.05,
+    max_iter=300,
+    random_state=42
+)
+</code></pre>
+<p>HistGradientBoosting показал наилучший ROC-AUC среди всех протестированных моделей, что соответствует общей закономерности: на табличных данных градиентный бустинг, как правило, превосходит и линейные модели, и случайные леса.</p>
+<h2 id="_6">Нюансы решения</h2>
+<h3 id="_7">Дисбаланс классов</h3>
+<p>Только 6,7% клиентов имеют дефолт. Из-за этого модель, обученная без учёта дисбаланса, склонна предсказывать 0 для всех объектов — и получать при этом высокую accuracy. Поэтому для несбалансированных задач accuracy — плохая метрика; нужно смотреть на ROC-AUC, F1-меру или confusion matrix.</p>
+<h3 id="_8">Пропуски как сигнал</h3>
+<p>Нулевые значения в «Год реновации» в lab5 — аналог ситуации с <code>MonthlyIncome</code> здесь: отсутствие данных само по себе может нести информацию (например, нет дохода = нет официального трудоустройства). Простое заполнение средним сглаживает этот сигнал.</p>
+<h3 id="-">Порог классификации и бизнес-логика</h3>
+<p>В задаче скоринга математически оптимальный порог 0.5 не всегда совпадает с бизнесом оптимальным. Если потери от невозврата в 10 раз выше потерь от отказа честному клиенту, оптимальный порог сдвигается вниз. Именно поэтому в реальных системах скоринга порог настраивают под конкретные бизнес-параметры.</p>
+<h3 id="svm">SVM медленнее на больших выборках</h3>
+<p>SVM с RBF-ядром имеет сложность обучения O(n²)–O(n³) по числу объектов. На 50 000 примерах это уже заметно: обучение занимает значительно больше времени, чем Random Forest или бустинг. При увеличении выборки разрыв только растёт.</p>
+<h3 id="pipeline">Pipeline для предобработки</h3>
+<p>Использование <code>Pipeline</code> гарантирует, что масштабирование признаков для SVM и kNN выполнялось только по обучающим данным, а тестовые данные трансформировались с теми же параметрами. Без Pipeline легко случайно «утечь» информацию из теста в обучение.</p>
+<h2 id="_9">Выводы</h2>
+<p>В ходе работы освоен полный цикл построения классификатора: от обработки несбалансированных данных с пропусками до сравнения нескольких моделей по ROC-AUC. Ключевые выводы:</p>
+<ul>
+<li>Accuracy — ненадёжная метрика при дисбалансе классов; ROC-AUC даёт объективную картину.</li>
+<li>Параметр <code>class_weight="balanced"</code> существенно улучшает качество Random Forest на несбалансированных данных.</li>
+<li>HistGradientBoosting показал лучший ROC-AUC среди всех протестированных моделей.</li>
+<li>Выбор порога классификации — бизнес-решение, а не техническое.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../lab3/" class="btn btn-neutral float-left" title="Лабораторная работа 3"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../lab5/" class="btn btn-neutral float-right" title="Лабораторная работа 5">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../lab3/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../lab5/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
